@@ -1,3 +1,8 @@
+.portfolio__github-link .github-icon {
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
 /* ==================== GOOGLE FONTS ====================*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
