@@ -161,16 +161,17 @@
         <canvas id="myChart"
             style="display:block; margin:0 auto; width:100%; max-width:600px; margin-bottom: 50px;"></canvas>
         <script>
-            var xValues = ["Javascript", "HTML", "CSS"];
-            var yValues = [20, 40, 40];
+            // 技能統計簡化，改用長條圖
+            var xValues = [
+                "Vue 3", "React", "Bootstrap 5", "PHP", "Chart.js", "jQuery", "Flask", "WebSocket"
+            ];
+            var yValues = [2,2,2,1,2,1,1,1];
             var barColors = [
-                "#b91d47",
-                "#00aba9",
-                "#2b5797",
+                "#b91d47", "#00aba9", "#2b5797", "#e8c3b9", "lightgreen", "#f39c12", "#8e44ad", "#16a085"
             ];
 
             new Chart("myChart", {
-                type: "pie",
+                type: "bar",
                 data: {
                     labels: xValues,
                     datasets: [{
@@ -179,9 +180,18 @@
                     }]
                 },
                 options: {
+                    legend: { display: false },
                     title: {
                         display: true,
-                        text: "我的技能分佈"
+                        text: "我的技能分佈 (依作品集統計)"
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                                stepSize: 1
+                            }
+                        }]
                     }
                 }
             });
